@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercedes-Benz Info</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    header {
+      background-image: url(wp.jpg);
+      background-size: cover;
+      background-color: #000;
+      color: #ffffff;
+      padding: 40px;
+      text-align: center;
+      height: 80%;
+      font-size: 1rem;
+      font-weight: 700;
+    
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00bfa5;
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-color: #e0e0e0;
+      text-align: center;
+      padding: 110px 20px;
+      max-height: 50%;
+    }
+
+    .models {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .card {
+      background: #ccc;
+      margin-left: 1%;
+      text-align: center;
+      margin-top: 5%;
+      border-radius: 5px;
+      padding: 90px;
+
+    }
+
+    .car-card {
+      background: white;
+      max-width: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 60px 50px;
+      text-align: center;
+      margin-right: 10% 10%;
+      width: 20%;
+      color: #fff;
+
+    }
+    .car-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .car-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: none;
+    }
+
+    .car-card a {
+      display: inline-block;
+      margin-top: 80px;
+      color: white;
+      background-color: #00695c;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-bottom: 2px;
+      border-bottom: 20px 50px;
+    }
+
+    .car-card a:hover {
+      background-color: #004d40;
+      
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 31px;
+      margin-top: 15px;
+      
+    }
+
+    .page-section {
+      margin-left: 0%;
+      display: none;
+      padding: 30px;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .models {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    .login-container {
+      max-width: 390px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #ecebeb;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .login-container input,
+    .login-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00695c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background-color: #004d40;
+    }
+    ul,li{
+      text-align: left;
+    }
+    
+
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px 15px;
+      text-align: center;
+    }
+    th {
+      background-color: #000;
+      color: #fff;
+    }
+    .view-link a {
+      background: #000;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header >
+    <h1>Mercedes-Benz</h1>
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home">Home</a></li>
+        <li><a href="#" data-target="models">Models</a></li>
+        <li><a href="#" data-target="compare">Compare</a></li>
+        <li><a href="#" data-target="about">About</a></li>
+        <li><a href="#" data-target="contact">Contact</a></li>
+        <li  style="justify-content: right;" ><a href="#" data-target="login">login</a></li>
+         <li><a href="#" data-target="cart">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sections -->
+  <section id="home" class="page-section active">
+    <div class="hero">
+      <h2>Explore Luxury Like Never Before</h2>
+      <p>Discover Mercedes-Benz models, features, and prices</p>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="models" class="page-section">
+    <h2 style="text-align: center;">Various Models</h2>
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        <p>
+        <h4>Hatchback</h4>
+        <ul>
+          <li>A-Class</li>
+          <li>B-Class</li>
+          <li>E-Class Estate</li>
+          <li>CLS Shooting Brake</li>
+        </ul>
+        </p>
+        <a href="#" data-target="hatchback">View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>Sedan</h4>
+        <ul>
+          <li>C-Class</li>
+          <li>E-Class</li>
+          <li>S-Class</li>
+          <li>CLS-Class</li>
+        </ul>
+        <a href="#" data-target="sedan">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(cover.jpg);background-size:cover">
+        
+        <h4>Sport</h4>
+          <li>SL-Class</li>
+          <li>E-Coupe</li>
+          <li>C-Coupe</li>
+        </ul>
+        <a href="#" data-target="sport" style="margin-top: 55% ;">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(fr.jpg);background-size:cover">
+       
+        <h4>Off-Road</h4>
+        <ul>
+          <li>M-Class</li>
+          <li>G-Class</li>
+          <br>
+        </ul>
+        <a href="#" data-target="off-road">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(v.jpg);background-size:cover;">
+        
+        <h4>Van</h4>
+        <ul>
+          <li>Vito</li>
+          <li>Viano</li>
+          <li>MB100</li>
+        </ul>
+        <a href="#" data-target="van">View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sc.jpg);background-size:cover;">
+        
+        <h4>Supercar</h4>
+         <ul>
+          <li>SLS-Class</li>
+          <br>
+          <br>
+        </ul>
+        <a href="#" data-target="supercar">View Details</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="compare" class="page-section">
+      <h1>Compare Mercedes-Benz Models</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th><th>Category</th><th>Engine</th><th>Horsepower</th><th>Drivetrain</th><th>Starting Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A-Class</td><td>Hatchback</td><td>1.3L Turbo I4</td><td>163 hp</td><td>FWD / AWD</td><td>$35,000</td> 
+        </tr>
+        <tr>
+          <td>E-Class Estate</td>
+          <td>Hatchback</td>
+          <td>2.0L Turbo I4</td>
+          <td>255 hp</td>
+          <td>AWD</td>
+          <td>$71,250</td>
+          
+        </tr>
+        <tr>
+          <td>C-Class</td>
+          <td>Sedan</td>
+          <td>2.0L Turbo I4</td>
+          <td>255 hp</td>
+          <td>RWD / AWD</td>
+          <td>$46,000</td>
+          
+        </tr>
+        <tr>
+          <td>E-Class</td>
+          <td>Sedan</td>
+          <td>3.0L Turbo I6</td>
+          <td>375 hp</td>
+          <td>AWD</td>
+          <td>$62,000</td>
+          
+        </tr>
+        <tr>
+          <td>S-Class</td>
+          <td>Sedan</td>
+          <td>4.0L V8 Biturbo</td>
+          <td>496 hp</td>
+          <td>AWD</td>
+          <td>$114,500</td>
+          
+        </tr>
+        <tr>
+          <td>SL-Class</td>
+          <td>Sport</td>
+          <td>4.0L V8 Biturbo</td>
+          <td>469 hp</td>
+          <td>AWD</td>
+          <td>$142,000</td>
+          
+        </tr>
+        <tr>
+          <td>M-Class</td>
+          <td>Off-Road</td>
+          <td>3.5L V6</td>
+          <td>302 hp</td>
+          <td>AWD</td>
+          <td>$54,000</td>
+        
+        </tr>
+        <tr>
+          <td>G-Class</td>
+          <td>Off-Road</td>
+          <td>4.0L V8 Biturbo</td>
+          <td>416 hp</td>
+          <td>AWD</td>
+          <td>$139,900</td>
+        
+        </tr>
+        <tr>
+          <td>Vito</td>
+          <td>Van</td>
+          <td>2.0L Diesel</td>
+          <td>190 hp</td>
+          <td>RWD</td>
+          <td>$41,000</td>
+          
+        </tr>
+        <tr>
+          <td>SLS-Class</td>
+          <td>Supercar</td>
+          <td>6.2L V8</td>
+          <td>563 hp</td>
+          <td>RWD</td>
+          <td>$230,000</td>
+          
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+
+
+
+
+
+
+  <section id="about" class="page-section">
+     <div class="container">
+        <h1>About Us</h1>
+        <p>
+            Welcome to <strong>Mercedes-Benz</strong>, your trusted destination for all things Mercedes-Benz.
+        </p>
+        <p>
+            Driven by a passion for luxury, performance, and innovation, we created this platform to bring the legacy of Mercedes-Benz closer to enthusiasts and customers alike. Whether you're exploring your next dream car or simply admire the craftsmanship behind the iconic three-pointed star, you're in the right place.
+        </p>
+        <p>
+            At <strong>Mercedes-Benz</strong>, we aim to provide:
+        </p>
+        <ul>
+            <li><strong>Detailed insights</strong> into the latest Mercedes-Benz models</li>
+            <li><strong>Exclusive offers</strong> on both new and certified pre-owned vehicles</li>
+            <li><strong>Expert guidance</strong> and personalized customer service</li>
+            <li><strong>Authentic parts and accessories</strong> to keep your Benz in peak condition</li>
+        </ul>
+        <p>
+            Our mission is simple: to connect people with the elegance and engineering excellence of Mercedes-Benz.
+        </p>
+        <p>Thank you for choosing us to be a part of your journey.</p>
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <section id="contact" class="page-section">
+    <div class="login-container">
+      <h2>Contact Us</h2>
+      <form action="index.html">
+        <label for="uname">Full Name</label>
+        <input type="text" name="uname" required>
+
+        <label for="snumber">Phone No</label>
+        <input type="number" name="snumber" required>
+
+        <label for="sname">Email</label>
+        <input type="email" name="sname" required>
+
+        <label for="mytest">Message</label>
+        <textarea name="mytest" rows="3" placeholder="Your message..."></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="hatchback" class="page-section">
+     <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(https://gaadiwaadi.com/wp-content/uploads/2020/01/Mercedes-Benz-A-Class-2.jpg); background-size: cover;">
+        
+        <h4>A-Class</h4>
+        
+        <a href="#" data-target="detail-a-class"  style="margin-top: 55% ;">view details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>B-class</h4>
+        
+        <a href="#" data-target="detail-c-class"style="margin-top: 55% ;">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(cover.jpg);background-size:cover">
+        
+        <h4>E-class-Estate</h4>
+          
+        <a href="#" data-target="detail-e-class" style="margin-top: 55% ;">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(fr.jpg);background-size:cover">
+       
+        <h4>CLS-Shoot Brake</h4>
+       
+        <a href="#" data-target="CLS-Shoot Brake"style="margin-top: 55% ;">View Details</a>
+      </div>
+</div>
+    <button id="back-to-models">Back to Models</button>
+  </section>
+
+
+
+
+
+
+
+
+<section id="sedan" class="page-section">
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        
+        <h4>C-Class</h4>
+        
+        <a href="#" data-target="detail-c-class" >View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>E-Class</h4>
+        
+        <a href="#" data-target="detail-e-class" style="margin-top: 70% ;">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(cover.jpg);background-size:cover">
+        
+        <h4>S-Class</h4>
+          
+        <a href="#" data-target="detail-s-class" style="margin-top: 55% ;">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(fr.jpg);background-size:cover">
+       
+        <h4>CLS-Class</h4>
+       
+        <a href="#" data-target="detail-cls"style="margin-top: 55% ;">View Details</a>
+      </div>
+
+
+    </div>
+    <button id="back-to-models">Back to Models</button>
+</section>
+<section id="sport" class="page-section">
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        
+        <h4>SL-Class</h4>
+        
+        <a href="#" data-target="detail-sl-class" >View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>E-Coupe</h4>
+        
+        <a href="#" data-target="detail-e-coupe">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(cover.jpg);background-size:cover">
+        
+        <h4>C-Coupe</h4>
+          
+        <a href="#" data-target="detail-c-coupe" style="margin-top: 55% ;">View Details</a>
+      </div>
+
+    </div>
+    <button id="back-to-models">Back to Models</button>
+</section>
+<section id="off-road" class="page-section">
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        
+        <h4>M-Class</h4>
+        
+        <a href="#" data-target="detail-m-class" >View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>G-Class</h4>
+        
+        <a href="#" data-target="detail-g-class">View Details</a>
+      </div>
+
+    </div>
+    <button id="back-to-models">Back to Models</button>
+</section>
+<section id="van" class="page-section">
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        
+        <h4>Vito</h4>
+        
+        <a href="#" data-target="detail-vito" >View Details</a>
+      </div>
+
+      <div class="car-card" style="background-image: url(sd.avif);background-size:cover">
+        
+        <h4>Viano</h4>
+        
+        <a href="#" data-target="detail-viano">View Details</a>
+      </div>
+
+      <div class="car-card"style="background-image: url(cover.jpg);background-size:cover">
+        
+        <h4>MB100</h4>
+          
+        <a href="#" data-target="detail-mb100" style="margin-top: 55% ;">View Details</a>
+      </div>
+
+    </div>
+    <button id="back-to-models">Back to Models</button>
+</section>
+<section id="supercar" class="page-section">
+    <div class="card models">
+      <div class="car-card" style="width: 20%; background-image:url(hb.avif)">
+        
+        <h4>SLS-Class</h4>
+        
+        <a href="#" data-target="detail-sls-class" >View Details</a>
+      </div>
+
+    </div>
+    <button id="back-to-models">Back to Models</button>
+</section>
+
+
+
+
+  <section id="cart" class="page-section">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <div id="total-price">Total: $0</div>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="showSection('models')">Back to Models</button>
+  </section>
+
+
+
+
+
+<section id="detail-b-class" class="page-section">
+    <h3>Mercedes-Benz B-Class</h3>
+    <img src="images/b-class.jpg" alt="Mercedes B-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $37,000</li>
+        <li>Engine: 1.5L Turbo I4</li>
+        <li>Mileage: 27 MPG city / 36 MPG highway</li>
+        <li>Transmission: 7-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('B-Class', 37000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+
+</section>
+
+<section id="detail-e-class-estate" class="page-section">
+    <h3>Mercedes-Benz E-Class Estate</h3>
+    <img src="images/e-class-estate.jpg" alt="Mercedes E-Class Estate" style="max-width: 400px;" /> 
+    <ul>
+        <li>Price: $71,250</li>
+        <li>Engine: 2.0L Turbo I4</li>
+        <li>Mileage: 24 MPG city / 33 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('E-Class Estate', 71250)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-gle" class="page-section">
+    <h3>Mercedes-Benz CLS Shooting Brake</h3>
+    <img src="images/cls-shooting-brake.jpg" alt="Mercedes CLS Shooting Brake" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $75,000</li>
+        <li>Engine: 3.0L Turbo I6</li>
+        <li>Mileage: 22 MPG city / 30 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('CLS Shooting Brake', 75000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+
+ <section id="detail-a-class" class="page-section">
+    <h3>Mercedes-Benz A-Class</h3>
+    <img src="images/a-class.jpg" alt="Mercedes A-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $35,000</li>
+        <li>Engine: 1.3L Turbo I4</li>
+        <li>Mileage: 28 MPG city / 35 MPG highway</li>
+        <li>Transmission: 7-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('A-Class', 35000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+
+
+
+<section id="detail-c-coupe" class="page-section">
+    <h3>Mercedes-Benz C-Coupe</h3>
+    <img src="images/c-coupe.jpg" alt="Mercedes C-Coupe" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $50,000</li>
+        <li>Engine: 2.0L Turbo I4</li>
+        <li>Mileage: 24 MPG city / 33 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('C-Coupe', 50000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+
+<section id="detail-e-coupe" class="page-section">
+    <h3>Mercedes-Benz E-Coupe</h3>
+    <img src="images/e-coupe.jpg" alt="Mercedes E-Coupe" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $65,000</li>
+        <li>Engine: 3.0L Turbo I6</li>
+        <li>Mileage: 22 MPG city / 30 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('E-Coupe', 65000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-m-class" class="page-section">
+    <h3>Mercedes-Benz M-Class</h3>
+    <img src="images/m-class.jpg" alt="Mercedes M-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $54,000</li>
+        <li>Engine: 3.5L V6</li>
+        <li>Mileage: 20 MPG city / 28 MPG highway</li>
+        <li>Transmission: 7-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('M-Class', 54000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-g-class" class="page-section">
+    <h3>Mercedes-Benz G-Class</h3>
+    <img src="images/g-class.jpg" alt="Mercedes G-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $139,900</li>
+        <li>Engine: 4.0L V8 Biturbo</li>
+        <li>Mileage: 13 MPG city / 17 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('G-Class', 139900)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-vito" class="page-section">
+    <h3>Mercedes-Benz Vito</h3>
+    <img src="images/vito.jpg" alt="Mercedes Vito" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $41,000</li>
+        <li>Engine: 2.0L Diesel</li>
+        <li>Mileage: 30 MPG city / 35 MPG highway</li>
+        <li>Transmission: 6-speed manual</li>
+    </ul>
+    <button onclick="addToCart('Vito', 41000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-viano" class="page-section">
+    <h3>Mercedes-Benz Viano</h3>
+    <img src="images/viano.jpg" alt="Mercedes Viano" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $45,000</li>
+        <li>Engine: 2.2L Diesel</li>
+        <li>Mileage: 28 MPG city / 34 MPG highway</li>
+        <li>Transmission: 6-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('Viano', 45000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-mb100" class="page-section">
+    <h3>Mercedes-Benz MB100</h3>
+    <img src="images/mb100.jpg" alt="Mercedes MB100" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $30,000</li>
+        <li>Engine: 2.4L Diesel</li>
+        <li>Mileage: 25 MPG city / 30 MPG highway</li>
+        <li>Transmission: 5-speed manual</li>
+    </ul>
+    <button onclick="addToCart('MB100', 30000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-sls-class" class="page-section">
+    <h3>Mercedes-Benz SLS-Class</h3>
+    <img src="images/sls-class.jpg" alt="Mercedes SLS-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $230,000</li>
+        <li>Engine: 6.2L V8</li>
+        <li>Mileage: 15 MPG city / 22 MPG highway</li>
+        <li>Transmission: 7-speed dual-clutch automatic</li>  
+    </ul>
+    <button onclick="addToCart('SLS-Class', 230000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-s-class" class="page-section">
+    <h3>Mercedes-Benz S-Class</h3>
+    <img src="images/s-class.jpg" alt="Mercedes S-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $114,500</li>
+        <li>Engine: 4.0L V8 Biturbo</li>
+        <li>Mileage: 18 MPG city / 26 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('S-Class', 114500)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+
+</section>
+
+<section id="detail-cls" class="page-section">
+    <h3>Mercedes-Benz CLS-Class</h3>
+    <img src="images/cls-class.jpg" alt="Mercedes CLS-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $75,000</li>
+        <li>Engine: 3.0L Turbo I6</li>
+        <li>Mileage: 21 MPG city / 29 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('CLS-Class', 75000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-sl-class" class="page-section">
+    <h3>Mercedes-Benz SL-Class</h3>
+    <img src="images/sl-class.jpg" alt="Mercedes SL-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $142,000</li>
+        <li>Engine: 4.0L V8 Biturbo</li>
+        <li>Mileage: 20 MPG city / 27 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('SL-Class', 142000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+
+
+<section id="detail-c-class" class="page-section">
+    <h3>Mercedes-Benz C-Class</h3>
+    <img src="images/c-class.jpg" alt="Mercedes C-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $46,000</li>
+        <li>Engine: 2.0L Turbo I4</li>
+        <li>Mileage: 25 MPG city / 35 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('C-Class', 46000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+<section id="detail-e-class" class="page-section">
+    <h3>Mercedes-Benz E-Class</h3>
+    <img src="images/e-class.jpg" alt="Mercedes E-Class" style="max-width: 400px;" />
+    <ul>
+        <li>Price: $62,000</li>
+        <li>Engine: 3.0L Turbo I6</li>
+        <li>Mileage: 23 MPG city / 31 MPG highway</li>
+        <li>Transmission: 9-speed automatic</li>
+    </ul>
+    <button onclick="addToCart('E-Class', 62000)">Add to Cart</button>
+    <button onclick="showSection('models')">Back to Models</button>
+</section>
+
+
+
+
+
+
+  <section id="login" class="page-section">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </section>
+  <section id="cart" class="page-section">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <p id="total-price">Total: $0</p>
+  <button onclick="checkout()">Checkout</button>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Mercedes-Benz Info. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    const links = document.querySelectorAll('nav a, .car-card a, #back-to-models');
+    const sections = document.querySelectorAll('.page-section');
+
+    function showSection(id) {
+      sections.forEach((section) => {
+        section.classList.toggle('active', section.id === id);
+      });
+    }
+
+    links.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const target = link.getAttribute('data-target');
+        if (target) {
+          showSection(target);
+        } else if (link.id === 'back-to-models') {
+          showSection('models');
+        }
+      });
+    });
+    let cart = [];
+
+function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+  renderCart();
+  showSection('cart');
+}
+
+function renderCart() {
+  const cartItems = document.getElementById('cart-items');  
+  cartItems.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const itemTotal = item.price * item.quantity;
+    total += itemTotal;
+    const div = document.createElement('div');
+    div.innerHTML = `${item.name} - $${item.price} x ${item.quantity} = $${itemTotal}`;
+    cartItems.appendChild(div);
+  });
+  document.getElementById('total-price').innerText = `Total: $${total}`;
+}
+function checkout() {
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+
+  let orderSummary = 'Order Summary:\n\n';
+  cart.forEach(item => {
+    orderSummary += `${item.name} - $${item.price} x ${item.quantity} = $${item.price * item.quantity}\n`;
+  });     
+  orderSummary += `\nTotal: $${cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}`;
+  alert(orderSummary);      
+  cart = [];
+  renderCart();
+  showSection('home');
+}
+    document.getElementById('back-to-models').addEventListener('click', () => {
+      showSection('models');
+    });
+
+    // Initialize the cart
+    renderCart();
+    // Show the home section by default
+    showSection('home');
+    // Add event listeners for the back buttons
+    document.querySelectorAll('.page-section button').forEach(button => {
+      button.addEventListener('click', () => {
+        showSection('models');
+      });
+    });
+    // Add event listener for the login form
+    document.querySelector('#login form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Login functionality is not implemented yet.');
+    });
+    // Add event listener for the contact form
+    document.querySelector('#contact form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      document.querySelector('#contact form').reset();
+      showSection('home');
+    });
+    // Add event listener for the cart section
+    document.querySelector('#cart button').addEventListener('click', () => {
+      showSection('models');
+    });
+    // Add event listener for the checkout button
+    document.querySelector('#cart button').addEventListener('click', () => {
+      checkout();
+    });
+
+    // Add event listeners for model detail sections
+    const modelDetails = [
+      'detail-a-class', 'detail-b-class', 'detail-c-class', 'detail-e-class',
+      'detail-c-coupe', 'detail-e-coupe', 'detail-m-class', 'detail-g-class',
+      'detail-vito', 'detail-viano', 'detail-mb100', 'detail-sls-class',
+      'detail-s-class', 'detail-cls', 'detail-sl-class'
+    ];
+    modelDetails.forEach(detail => {
+      document.querySelector(`#${detail} button`).addEventListener('click', () => {
+        showSection('models');
+      });
+    });
+
+    
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
